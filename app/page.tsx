@@ -1,9 +1,20 @@
-import Image from "next/image";
+import Footer from "@/components/shared/Footer";
+import Hero from "@/components/shared/Hero";
+import Header from "@/components/navbar/Header";
+import MobileNav from "@/components/navbar/MobileNav";
+import NewProducts from "@/components/shared/NewProducts";
+import ProductCarousel from "@/components/shared/product";
 
 export default function Home() {
   return (
     <main>
-      <h1>Hello World</h1>
+      <Header />
+
+      {/* <MobileNav /> */}
+      <Hero />
+      <NewProducts />
+      <ProductCarousel />
+      <Footer />
     </main>
   );
 }
