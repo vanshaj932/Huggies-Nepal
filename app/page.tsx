@@ -7,10 +7,8 @@ import ProductCarousel from "@/components/shared/product";
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-col">
       <Header />
-
-      {/* <MobileNav /> */}
       <Hero />
       <NewProducts />
       <ProductCarousel />

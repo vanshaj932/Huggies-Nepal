@@ -1,8 +1,16 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
   return (
-    <div className="bg-[url(/assets/images/main.png)]  bg-center h-[70vh] mb-4 tablet:h-screen tablet:bg-cover"></div>
+    <div className="overflow-hidden relative h-[70vh] tablet:h-screen">
+      <Image
+        src="/assets/images/main.png"
+        alt="huggies"
+        layout="fill"
+        className="h-[50vh] w-full"
+      />
+    </div>
   );
 };
 

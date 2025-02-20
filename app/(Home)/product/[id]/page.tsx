@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import SingleProduct from "../../../../components/cards/SingleProduct";
 import image from "next/image";
 import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/navbar/temp";
 
 interface Size {
   size: string; // e.g., "XS/NB", "S", "M", etc.
