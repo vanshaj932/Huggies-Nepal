@@ -117,11 +117,8 @@ const Navbar = () => {
         {/* Second Section */}
         <div className="bg-slate-100 h-auto min-h-[5vh] flex justify-between items-center ">
           <div className="hidden tablet:flex justify-start items-center space-x-8 ml-[15vw]">
-            <Link
-              href="/know-huggies"
-              className=" font-serif hover:text-red-600"
-            >
-              Know Huggies
+            <Link href="/" className=" font-serif hover:text-red-600">
+              Home
             </Link>
             <Link href="/product" className=" font-serif hover:text-red-600">
               Product

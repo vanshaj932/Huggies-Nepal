@@ -24,7 +24,7 @@ const FeatureItem = ({ feature, index }: FeatureItemProps) => (
 const NewProducts = () => {
   return (
     <div className=" flex flex-col text-center p-10">
-      <h2 className="text-4xl font-bold pb-10 text-gray-700">
+      <h2 className="text-4xl font-semibold font-serif pb-10 text-gray-700">
         Our New Launches
       </h2>
 
