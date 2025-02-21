@@ -2,9 +2,7 @@ import Header from "@/components/navbar/Header";
 import { notFound } from "next/navigation";
 
 import SingleProduct from "../../../../components/cards/SingleProduct";
-import image from "next/image";
 import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/navbar/temp";
 
 interface Size {
   size: string; // e.g., "XS/NB", "S", "M", etc.
@@ -170,17 +168,16 @@ const products: Product[] = [
   },
 ];
 
-export default async function ProductPage({
-  params,
-}: {
+interface ProductPageProps {
   params: { id: string };
-}) {
-  const { id } = await params;
-  const productId = parseInt(id, 10);
+}
+
+export default function ProductPage({ params }: ProductPageProps) {
+  const productId = parseInt(params.id, 10);
   const product = products.find((p) => p.id === productId);
 
   if (!product) {
-    notFound(); // Trigger Next.js's built-in 404 page
+    notFound();
   }
 
   return (
