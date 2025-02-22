@@ -1,20 +1,18 @@
-import Header from "@/components/navbar/Header";
-import { notFound } from "next/navigation";
-
-import SingleProduct from "../../../../components/cards/SingleProduct";
+import SingleProduct from "@/components/cards/SingleProduct";
 import Footer from "@/components/shared/Footer";
+import Header from "@/components/navbar/Header";
 
-interface Size {
-  size: string; // e.g., "XS/NB", "S", "M", etc.
-  weight: string; // e.g., "0-5 kgs", "4-8 kgs", etc.
-  highlight?: boolean; // Optional: true for highlighting specific sizes
-}
+type Size = {
+  size: string;
+  weight: string;
+  highlight?: boolean;
+};
 
-interface Feature {
+type Feature = {
   img: string;
   title: string;
   content: string;
-}
+};
 
 type Product = {
   id: number;
@@ -27,7 +25,10 @@ type Product = {
   features: Feature[];
 };
 
-// Mock product data
+type Props = {
+  product: Product;
+};
+
 const products: Product[] = [
   {
     id: 1,
@@ -168,16 +169,19 @@ const products: Product[] = [
   },
 ];
 
-interface ProductPageProps {
-  params: { id: string };
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id.toString(), // Dynamic routes based on the product ID
+  }));
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const productId = parseInt(params.id, 10);
-  const product = products.find((p) => p.id === productId);
+// Page component
+const ProductPage = async ({ params }: { params: { id: string } }) => {
+  const productId = parseInt(params.id, 10); // Parse the ID to integer
+  const product = products.find((prod) => prod.id === productId);
 
   if (!product) {
-    notFound();
+    return <div>Product not found</div>;
   }
 
   return (
@@ -187,4 +191,6 @@ export default function ProductPage({ params }: ProductPageProps) {
       <Footer />
     </main>
   );
-}
+};
+
+export default ProductPage;
