@@ -1,5 +1,3 @@
-import { features } from "process";
-
 // interface Product {
 //   id: number;
 //   imageUrl: string;

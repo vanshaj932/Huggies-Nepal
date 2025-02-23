@@ -1,7 +1,7 @@
 import Footer from "@/components/shared/Footer";
 import Hero from "@/components/shared/Hero";
 import Header from "@/components/navbar/Header";
-import MobileNav from "@/components/navbar/MobileNav";
+// import MobileNav from "@/components/navbar/MobileNav";
 import NewProducts from "@/components/shared/NewProducts";
 import ProductCarousel from "@/components/shared/product";
 

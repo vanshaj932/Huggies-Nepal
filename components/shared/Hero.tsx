@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="overflow-hidden relative h-[70vh] tablet:h-screen">
+    <div className="relative h-[70vh] overflow-hidden tablet:h-screen">
       <Image
         src="/assets/images/main.png"
         alt="huggies"

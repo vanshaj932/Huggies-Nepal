@@ -43,17 +43,10 @@ const FilteredProducts = () => {
     diaperFeature: true,
   });
 
-  const sections = {
-    diaperSize: true,
-    productType: true,
-    diaperFeature: true,
-  };
+  // const sections = { diaperSize: true, productType: true, diaperFeature: true };
 
   const toggleSection = (section: any) => {
-    setOpenSections((prev: any) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
+    setOpenSections((prev: any) => ({ ...prev, [section]: !prev[section] }));
   };
 
   // State for filters
@@ -61,11 +54,7 @@ const FilteredProducts = () => {
     size: string[];
     type: string[];
     features: string[];
-  }>({
-    size: [],
-    type: [],
-    features: [],
-  });
+  }>({ size: [], type: [], features: [] });
 
   // Function to handle filter changes
   const handleFilterChange = (filterCategory: string, value: string) => {
@@ -100,20 +89,20 @@ const FilteredProducts = () => {
   });
 
   return (
-    <div className="flex flex-col tablet:flex-row gap-6 p-6">
+    <div className="flex flex-col gap-6 p-6 tablet:flex-row">
       {/* Sidebar Filters */}
-      <div className="w-full tablet:w-[30%] p-4  rounded-md">
-        <h2 className="text-2xl border-b-[1px] font-serif font-bold pb-4 mb-4">
+      <div className="w-full rounded-md p-4  tablet:w-[30%]">
+        <h2 className="mb-4 border-b pb-4 font-serif text-2xl font-bold">
           Filter Products By
         </h2>
 
         {/* Filter Categories */}
-        <div className="mb-6 border-b-[1px]">
+        <div className="mb-6 border-b">
           <div
-            className="flex justify-between items-center cursor-pointer  mb-6"
+            className="mb-6 flex cursor-pointer items-center  justify-between"
             onClick={() => toggleSection("diaperSize")}
           >
-            <h3 className="text-md font-semibold mb-2">Diaper Size</h3>
+            <h3 className="mb-2 text-base font-semibold">Diaper Size</h3>
             <span className="text-red-500 ">
               {openSections.diaperSize ? "▲" : "▼"}
             </span>
@@ -136,12 +125,12 @@ const FilteredProducts = () => {
           )}
         </div>
 
-        <div className="mb-6 border-b-[1px]">
+        <div className="mb-6 border-b">
           <div
-            className="flex justify-between items-center cursor-pointer mb-6"
+            className="mb-6 flex cursor-pointer items-center justify-between"
             onClick={() => toggleSection("productType")}
           >
-            <h3 className="text-md font-semibold mb-2">Product Type</h3>
+            <h3 className="mb-2 text-base font-semibold">Product Type</h3>
             <span className="text-red-500">
               {openSections.productType ? "▲" : "▼"}
             </span>
@@ -164,12 +153,12 @@ const FilteredProducts = () => {
           )}
         </div>
 
-        <div className="border-b-[1px]">
+        <div className="border-b">
           <div
-            className="flex justify-between items-center cursor-pointer mb-6"
+            className="mb-6 flex cursor-pointer items-center justify-between"
             onClick={() => toggleSection("diaperFeature")}
           >
-            <h3 className="text-md font-semibold mb-2">Diaper Feature</h3>
+            <h3 className="mb-2 text-base font-semibold">Diaper Feature</h3>
             <span className="text-red-500">
               {openSections.diaperFeature ? "▲" : "▼"}
             </span>
@@ -199,38 +188,38 @@ const FilteredProducts = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="w-full lg:w-3/4">
-        <div className="flex justify-between items-center mb-6">
+      <div className="lg:w-3/4 w-full">
+        <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-bold">
             {filteredProducts.length} Products
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 tablet:grid-cols-2 laptop:grid-cols-3">
           {filteredProducts.map((product) => (
             <Link href={`/product/${product.id}`} key={product.id}>
-              <div className="bg-white border border-gray-200 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-center">
+              <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-4 shadow-lg transition duration-300 hover:shadow-2xl">
                 {/* Image */}
                 <Image
                   src={product.image}
                   alt={product.name}
                   width={200}
                   height={200}
-                  className="w-full h-auto mb-4 rounded-xl"
+                  className="mb-4 h-auto w-full rounded-xl"
                 />
 
                 {/* Product Name */}
-                <h3 className="font-bold text-lg text-gray-900 mb-2 text-center">
+                <h3 className="mb-2 text-center text-lg font-bold text-gray-900">
                   {product.name}
                 </h3>
 
                 {/* Product Description */}
-                <p className="text-sm text-gray-600 mb-4 text-center">
+                <p className="mb-4 text-center text-sm text-gray-600">
                   {product.description}
                 </p>
 
                 {/* Shop Now Button */}
-                <button className="w-full bg-red-500 text-white font-semibold py-2 rounded-full hover:bg-red-600 transition duration-300">
+                <button className="w-full rounded-full bg-red-500 py-2 font-semibold text-white transition duration-300 hover:bg-red-600">
                   Shop Now
                 </button>
               </div>

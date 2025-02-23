@@ -13,24 +13,24 @@ interface FeatureItemProps {
 }
 
 const FeatureItem = ({ feature, index }: FeatureItemProps) => (
-  <li className="flex items-center bg-white shadow-md border border-gray-300 rounded-lg p-4 transition hover:shadow-lg hover:scale-[1.1]">
-    <span className="flex items-center justify-center min-w-8 h-8 bg-green-500 text-white font-bold rounded-full mr-4">
+  <li className="flex items-center rounded-lg border border-gray-300 bg-white p-4 shadow-md transition hover:scale-110 hover:shadow-lg">
+    <span className="mr-4 flex h-8 min-w-8 items-center justify-center rounded-full bg-green-500 font-bold text-white">
       {index + 1}
     </span>
-    <p className="text-green-700 font-medium">{feature}</p>
+    <p className="font-medium text-green-700">{feature}</p>
   </li>
 );
 
 const NewProducts = () => {
   return (
-    <div className=" flex flex-col text-center p-10">
-      <h2 className="text-4xl font-semibold font-serif pb-10 text-gray-700">
+    <div className=" flex flex-col p-10 text-center">
+      <h2 className="pb-10 font-serif text-4xl font-semibold text-gray-700">
         Our New Launches
       </h2>
 
-      <div className="flex flex-col bg-white  text-left rounded-3xl shadow-lg laptop:flex-row transition hover:shadow-xl">
+      <div className="flex flex-col rounded-3xl  bg-white text-left shadow-lg transition hover:shadow-xl laptop:flex-row">
         {/* Left Section: Product Image */}
-        <div className="relative w-full laptop:w-[50%] h-auto laptop:h-auto rounded-t-3xl laptop:rounded-l-3xl laptop:rounded-tr-none overflow-hidden">
+        <div className="relative h-auto w-full overflow-hidden rounded-t-3xl laptop:h-auto laptop:w-1/2 laptop:rounded-l-3xl laptop:rounded-tr-none">
           <Image
             src="/assets/images/newProduct12.jpg"
             alt="Huggies Skin Care Diaper"
@@ -42,13 +42,13 @@ const NewProducts = () => {
         </div>
 
         {/* Right Section: Product Info */}
-        <div className="bg-gray-50 w-full h-auto px-8 py-6 laptop:w-[50%] rounded-b-3xl laptop:rounded-r-3xl laptop:rounded-bl-none">
-          <h4 className="text-orange-400 font-serif text-3xl laptop:text-4xl tracking-wide">
+        <div className="h-auto w-full rounded-b-3xl bg-gray-50 px-8 py-6 laptop:w-1/2 laptop:rounded-r-3xl laptop:rounded-bl-none">
+          <h4 className="font-serif text-3xl tracking-wide text-orange-400 laptop:text-4xl">
             Huggies Skin Perfect Diapers
           </h4>
-          <p className="py-6 text-lg text-gray-600 font-light">
+          <p className="py-6 text-lg font-light text-gray-600">
             Soft surface combined with Dual Zone technology helps soothe and
-            nourish your baby's skin. Clinically proven to help prevent skin
+            nourish your baby`s skin. Clinically proven to help prevent skin
             irritation, safe for sensitive skin.
           </p>
 
@@ -59,7 +59,7 @@ const NewProducts = () => {
           </ul>
           <button
             aria-label="Buy Now - Huggies Skin Perfect Diapers"
-            className="bg-orange-400 text-white font-bold rounded-lg px-6 py-3 mt-10 hover:bg-orange-500 hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out"
+            className="mt-10 rounded-lg bg-orange-400 px-6 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-500 hover:shadow-lg"
           >
             Buy Now
           </button>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface CardProps {
@@ -14,14 +15,14 @@ const Card: React.FC<CardProps> = ({
   buttonText,
 }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-400">
-      <img className="w-full" src={image} alt={title} />
+    <div className="max-w-sm overflow-hidden rounded bg-gray-400 shadow-lg">
+      <Image className="w-full" layout="fill" src={image} alt={title} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">{description}</p>
+        <div className="mb-2 text-xl font-bold">{title}</div>
+        <p className="text-base text-gray-700">{description}</p>
       </div>
-      <div className="px-6 pt-4 pb-2">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <div className="px-6 pb-2 pt-4">
+        <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
           {buttonText}
         </button>
       </div>

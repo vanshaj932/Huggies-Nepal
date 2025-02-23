@@ -97,59 +97,56 @@ const InstagramIcon = dynamic(() => import("@mui/icons-material/Instagram"), {
 const YouTubeIcon = dynamic(() => import("@mui/icons-material/YouTube"), {
   ssr: false,
 });
-const LinkedInIcon = dynamic(() => import("@mui/icons-material/LinkedIn"), {
-  ssr: false,
-});
 
 const Footer = () => {
   const socialLinks = [
     {
-      icon: <FacebookRoundedIcon className="h-8 w-8 text-white" />,
+      icon: <FacebookRoundedIcon className="size-8 text-white" />,
       href: "https://www.facebook.com/profile.php?id=61555290609679",
       label: "Facebook",
     },
     {
-      icon: <InstagramIcon className="h-8 w-8 text-white" />,
+      icon: <InstagramIcon className="size-8 text-white" />,
       href: "#",
       label: "Instagram",
     },
     {
-      icon: <YouTubeIcon className="h-8 w-8 text-white" />,
+      icon: <YouTubeIcon className="size-8 text-white" />,
       href: "#",
       label: "YouTube",
     },
     {
-      icon: <WhatsApp className="h-8 w-8 text-white" />,
+      icon: <WhatsApp className="size-8 text-white" />,
       href: "#",
       label: "WhatsApp",
     },
   ];
 
   return (
-    <footer className="bg-bluereal py-20 mt-10">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-16 border-b border-white/30 pb-20">
+    <footer className="mt-10 bg-bluereal py-20">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 gap-16 border-b border-white/30 pb-20 tablet:grid-cols-2 laptop:grid-cols-4">
           {/* Logo Section */}
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <Image
               src="/assets/images/main-logo.webp"
               alt="huggies logo"
               width={240}
               height={240}
-              className="hover:opacity-90 transition-opacity"
+              className="transition-opacity hover:opacity-90"
             />
           </div>
 
           {/* About Us Section */}
           <div className="text-center laptop:text-left">
-            <h4 className="text-white text-3xl font-serif font-bold mb-8">
+            <h4 className="mb-8 font-serif text-3xl font-bold text-white">
               About us
             </h4>
             <ul className="space-y-6">
               <li>
                 <Link
                   href="#"
-                  className="text-white/90 hover:text-white transition-colors text-xl"
+                  className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   Products
                 </Link>
@@ -157,7 +154,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="text-white/90 hover:text-white transition-colors text-xl"
+                  className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   About Huggies
                 </Link>
@@ -167,14 +164,14 @@ const Footer = () => {
 
           {/* Support Section */}
           <div className="text-center laptop:text-left">
-            <h4 className="text-white text-3xl font-serif font-bold mb-8">
+            <h4 className="mb-8 font-serif text-3xl font-bold text-white">
               Support
             </h4>
             <ul className="space-y-6">
               <li>
                 <Link
                   href="#"
-                  className="text-white/90 hover:text-white transition-colors text-xl"
+                  className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   Contact us
                 </Link>
@@ -184,15 +181,15 @@ const Footer = () => {
 
           {/* Social Links Section */}
           <div className="text-center laptop:text-left">
-            <h4 className="text-white text-3xl font-serif font-bold mb-8">
+            <h4 className="mb-8 font-serif text-3xl font-bold text-white">
               Know Huggies
             </h4>
-            <div className="flex justify-center laptop:justify-start space-x-6">
+            <div className="flex justify-center space-x-6 laptop:justify-start">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  className="p-4 rounded-full border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
+                  className="rounded-full border-2 border-white/30 p-4 transition-all duration-300 hover:bg-white/10"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -203,8 +200,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="text-center mt-10">
-          <p className="text-white/70 text-lg">
+        <div className="mt-10 text-center">
+          <p className="text-lg text-white/70">
             © {new Date().getFullYear()} Huggies. All rights reserved.
           </p>
         </div>

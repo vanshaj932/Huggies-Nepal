@@ -1,73 +1,3 @@
-// "use client";
-
-// import React from "react";
-// import {
-//   Sheet,
-//   SheetContent,
-//   SheetTrigger,
-//   SheetClose,
-//   SheetTitle, // Import SheetTitle
-// } from "@/components/ui/sheet";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { IoMenu } from "react-icons/io5";
-
-// const MobileNav = () => {
-//   const navLinks = [
-//     { label: "Home", href: "/" },
-//     { label: "Products", href: "/product" },
-//     { label: "About", href: "/about" },
-//   ];
-
-//   return (
-//     <div className="flex w-[50%] items-center justify-end">
-//       {/* Hamburger Menu Icon */}
-//       <Sheet>
-//         <SheetTrigger asChild>
-//           <IoMenu className="tablet:hidden" />
-//         </SheetTrigger>
-
-//         {/* Drawer Content */}
-//         <SheetContent side="top" className=" p-4 h-full">
-//           {/* Sheet Title */}
-//           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-
-//           {/* Logo */}
-//   <div className="mb-8 text-left">
-//     <Link href="/" className="flex items-center text-left gap-2">
-//       <Image
-//         src="/assets/images/main-logo.webp"
-//         alt="Site Logo"
-//         width={60}
-//         height={60}
-//       />
-//       <span className="text-2xl font-bold -translate-x-4 ml-[25%]">
-//         Huggies
-//       </span>
-//     </Link>
-//   </div>
-
-//   {/* Navigation Links */}
-//   <nav className="flex flex-col space-y-4">
-//     {navLinks.map((link) => (
-//       <SheetClose asChild key={link.href}>
-//         <Link
-//           href={link.href}
-//           className="text-xl text-gray-700 rounded-3xl hover:text-white hover:bg-blue-400  transition-all my-[16px] py-[24px] px-[32px] flex justify-center items-center font-serif font-normal "
-//         >
-//           {link.label}
-//         </Link>
-//       </SheetClose>
-//     ))}
-//   </nav>
-// </SheetContent>
-//       </Sheet>
-//     </div>
-//   );
-// };
-
-// export default MobileNav;
-
 import React from "react";
 import {
   Sheet,
@@ -81,6 +11,7 @@ import { Menu } from "lucide-react";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
+import Image from "next/image";
 
 const MobileNav = () => {
   const navLinks = [
@@ -90,16 +21,18 @@ const MobileNav = () => {
   ];
 
   return (
-    <div className="tablet:hidden h-auto">
+    <div className="h-auto tablet:hidden">
       {/* Buy Now Button */}
-      <div className="bg-blue-100 min-h-[5vh] w-full"></div>
-      <div className="min-h-[5vh] w-full h-auto flex flex-row items-center justify-center bg-slate-100">
+      <div className="min-h-[5vh] w-full bg-blue-100"></div>
+      <div className="flex h-auto min-h-[5vh] w-full flex-row items-center justify-center bg-slate-100">
         <div className="flex items-center justify-center pr-[50%] ">
           <Link href="/">
-            <img
+            <Image
               src="/assets/images/main-logo.webp"
               alt="Huggies Logo"
-              className="w-[100px] h-20"
+              height={20}
+              width={100}
+              className="h-20 w-[100px]"
             />
           </Link>
         </div>
@@ -124,9 +57,9 @@ const MobileNav = () => {
           >
             <button
               aria-label="Buy Now - Huggies Skin Perfect Diapers"
-              className="bg-green-500 text-white font-bold items-center font-serif rounded-full flex "
+              className="flex items-center rounded-full bg-green-500 font-serif font-bold text-white "
             >
-              <LocalMallIcon className="text-white px-1 h-10 w-10" />
+              <LocalMallIcon className="size-10 px-1 text-white" />
             </button>
           </Link>
         </div>
@@ -135,18 +68,18 @@ const MobileNav = () => {
         <Sheet>
           <SheetTrigger asChild>
             <button className="p-2">
-              <Menu className="w-6 h-6 text-blue-500" />
+              <Menu className="size-6 text-blue-500" />
             </button>
           </SheetTrigger>
 
           <SheetContent
             side="top"
-            className="w-full h-full text-center p-0 bg-white"
+            className="size-full bg-white p-0 text-center"
           >
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="mb-8 text-center">
-              <Link href="/" className="flex items-center text-center gap-2">
-                <span className="text-2xl font-bold text-center font-serif  ">
+              <Link href="/" className="flex items-center gap-2 text-center">
+                <span className="text-center font-serif text-2xl font-bold  ">
                   Huggies
                 </span>
               </Link>
@@ -158,7 +91,7 @@ const MobileNav = () => {
                 <SheetClose asChild key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xl text-gray-700 rounded-3xl hover:text-white hover:bg-blue-400  transition-all my-[16px] py-[24px] px-[32px] flex justify-center items-center font-serif font-normal "
+                    className="my-[16px] flex items-center justify-center rounded-3xl  px-[32px] py-[24px] font-serif text-xl font-normal text-gray-700 transition-all hover:bg-blue-400 hover:text-white "
                   >
                     {link.label}
                   </Link>

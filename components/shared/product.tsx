@@ -1,11 +1,14 @@
+/* eslint-disable tailwindcss/no-custom-classname */
+/* eslint-disable no-unused-vars */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { product } from "@/constants/product";
+import { product } from "@/lib/product";
 import ProductCard from "./productCard";
 import Image from "next/image";
 
@@ -59,37 +62,35 @@ const ProductCarousel = () => {
   const { width, height, device } = useWindowSize();
 
   // Swiper Reference
-  const swiperRef = useRef(null);
 
   // Number of slides per view based on the device
   let num = 4;
   if (device === "mobile") num = 1;
   else if (device === "tablet") num = 2;
+  // Change the ref type to just SwiperType
+  const swiperRef = useRef<SwiperType>(null);
 
   useEffect(() => {
     if (swiperRef.current) {
-      const swiperInstance = swiperRef.current.swiper;
-
-      // Manually reinitialize navigation buttons
-      swiperInstance.params.navigation.prevEl = ".swiper-button-prevv";
-      swiperInstance.params.navigation.nextEl = ".swiper-button-nextt";
-      swiperInstance.navigation.init();
-      swiperInstance.navigation.update();
+      swiperRef.current.navigation.update();
     }
   }, []);
 
   return (
-    <div className="bg-[url('/assets/images/bg-product.png')] greeny-10 h-[80vh] w-auto overflow-hidden flex justify-center items-center flex-col">
-      <h2 className="text-3xl font-bold text-center mb-10 font-serif mt-6 text-white">
+    <div className=" flex h-[80vh] w-auto flex-col items-center justify-center overflow-hidden bg-[url('/assets/images/bg-product.png')]">
+      <h2 className="mb-10 mt-6 text-center font-serif text-3xl font-bold text-white">
         Products
       </h2>
-      <div className="w-[70%] mx-[20px] relative justify-center items-center tablet:w-[70%]">
+      <div className="relative mx-[20px] w-[70%] items-center justify-center tablet:w-[70%]">
         <Swiper
-          ref={swiperRef} // Attach ref to Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }} // Attach ref to Swiper
           modules={[Navigation]}
           navigation={{
             nextEl: ".swiper-button-nextt",
             prevEl: ".swiper-button-prevv",
+            enabled: true,
           }}
           spaceBetween={20}
           slidesPerView={num}
@@ -108,7 +109,7 @@ const ProductCarousel = () => {
         </Swiper>
 
         {/* Navigation Buttons */}
-        <button className="swiper-button-prevv absolute h-[60px] flex items-center justify-center top-[45%] left-[-50px] z-20 w-[60px] rounded-full bg-pink-500 text-green-500">
+        <button className="swiper-button-prevv absolute left-[-50px] top-[45%] z-20 flex size-[60px] items-center justify-center rounded-full bg-pink-500 text-green-500">
           <Image
             src="/assets/svg/chevron-left.svg"
             alt="left"
@@ -116,7 +117,7 @@ const ProductCarousel = () => {
             height={40}
           />
         </button>
-        <button className="swiper-button-nextt absolute h-[60px] flex items-center justify-center top-[45%] right-[-50px] z-20 w-[60px] rounded-full bg-pink-500 text-green-500">
+        <button className="swiper-button-nextt absolute right-[-50px] top-[45%] z-20 flex size-[60px] items-center justify-center rounded-full bg-pink-500 text-green-500">
           <Image
             src="/assets/svg/chevron-right.svg"
             alt="right"

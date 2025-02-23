@@ -1,4 +1,5 @@
 // components/ProductCard.tsx
+import Image from "next/image";
 import React from "react";
 
 interface ProductCardProps {
@@ -17,26 +18,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onSeeDetails,
 }) => {
   return (
-    <div className="bg-white w-auto rounded-3xl shadow-md p-[10px] mx-auto h-[347px]">
+    <div className="mx-auto h-[347px] w-auto rounded-3xl bg-white p-[10px] shadow-md">
       {/* Product Image */}
-      <img
+      <Image
         src={imageUrl}
         alt={productName}
-        className="w-full h-40 object-contain mb-4"
+        width={50}
+        height={100}
+        className="mb-4 h-40 w-full object-contain"
       />
 
       {/* Product Details */}
-      <h3 className="text-lg font-bold text-gray-800 text-center mb-2 h-[56px]">
+      <h3 className="mb-2 h-[56px] text-center text-lg font-bold text-gray-800">
         {productName}
       </h3>
-      <p className="text-sm text-gray-600 text-center mb-4">Size {size}</p>
+      <p className="mb-4 text-center text-sm text-gray-600">Size {size}</p>
 
       {/* Action Buttons */}
-      <div className="flex justify-center mb-4 w-full">
-        <button className="flex items-center px-4 py-2 bg-green-500 text-white rounded-full font-semibold shadow hover:bg-green-600 transition">
+      <div className="mb-4 flex w-full justify-center">
+        <button className="flex items-center rounded-full bg-green-500 px-4 py-2 font-semibold text-white shadow transition hover:bg-green-600">
           Buy now
         </button>
-        <button className="flex items-center px-4 py-2 bg-gray-100 text-gray-600 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+        <button className="flex items-center rounded-full bg-gray-100 px-4 py-2 font-semibold text-gray-600 shadow transition hover:bg-gray-200">
           See details
         </button>
       </div>
