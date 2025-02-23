@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import ProductFeature from "./ProductFeature";
+import Link from "next/link";
 
 interface Size {
   size: string; // e.g., "XS/NB", "S", "M", etc.
@@ -46,23 +47,25 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
 
   return (
     <div className="overflow-hidden pt-10 ">
-      <div className="flex flex-col flex-grow laptop:flex-row laptop:px-8">
+      <div className="flex grow flex-col laptop:flex-row laptop:px-8">
         {/* Product Image */}
         <div className="w-full laptop:w-[64%]">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            className="w-full shadow-lg object-cover h-auto laptop:rounded-3xl "
+            width={800}
+            height={800}
+            className="h-auto w-full object-cover shadow-lg laptop:rounded-3xl "
           />
         </div>
 
         {/* Product Details */}
-        <div className="w-full m-4 laptop:m-8 laptop:w-[36%]">
+        <div className="m-4 w-full laptop:m-8 laptop:w-[36%]">
           <p className="text-[16px]">Diapers</p>
-          <h1 className="text-[40px] font-medium font-serif text-gray-800">
+          <h1 className="font-serif text-[40px] font-medium text-gray-800">
             {product.name}
           </h1>
-          <p className="text-lg text-black mt-4 text-wrap mb-8">
+          <p className="mb-8 mt-4 text-wrap text-lg text-black">
             {product.description}
           </p>
 
@@ -71,17 +74,17 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
             <button
               key={index}
               onClick={() => setSelectedSize(item.size)}
-              className={`border border-black rounded-md my-2 px-2 text-xl font-bold mx-2 w-auto ${
+              className={`m-2 w-auto rounded-md border border-black px-2 text-xl font-bold ${
                 item.size === selectedSize
-                  ? "bg-red-100 text-red-500 border-red-500" // Highlight the selected size
+                  ? "border-red-500 bg-red-100 text-red-500" // Highlight the selected size
                   : "bg-white text-black"
               }`}
             >
               Size-{item.size} <br />
               <span
-                className={`text-black text-[15px] ${
+                className={`text-[15px] text-black ${
                   item.size === selectedSize
-                    ? "bg-red-100 text-red-500 border-red-500" // Highlight the selected size
+                    ? "border-red-500 bg-red-100 text-red-500" // Highlight the selected size
                     : "bg-white text-black"
                 }`}
               >
@@ -99,8 +102,8 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
             ))}
           </ul> */}
 
-          <div className="mt-4 mb-4">
-            <h3 className="text-gray-700 text-sm font-bold mb-2">
+          <div className="my-4">
+            <h3 className="mb-2 text-sm font-bold text-gray-700">
               Select Retailer
             </h3>
             <div className="grid grid-cols-3 gap-2">
@@ -113,7 +116,7 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
                 <button
                   key={index}
                   onClick={() => setSelectedRetailer(retailer.name)}
-                  className={`border object-contain rounded-lg p-2 flex items-center justify-center ${
+                  className={`flex items-center justify-center rounded-lg border object-contain p-2 ${
                     retailer.name === selectedRetailer
                       ? "border-red-500"
                       : "border-gray-300"
@@ -132,18 +135,18 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
 
           {/* Shop Now */}
           <div className="mt-10">
-            <a
+            <Link
               href={getShopNowLink()}
-              className={`bg-red-600 text-white px-6 py-6 rounded-lg shadow hover:bg-red-700 text-sm ${
+              className={`rounded-lg bg-red-600 p-6 text-sm text-white shadow hover:bg-red-700 ${
                 !selectedSize || !selectedRetailer
-                  ? "opacity-50 cursor-not-allowed"
+                  ? "cursor-not-allowed opacity-50"
                   : ""
               }`}
               target="_blank"
               rel="noopener noreferrer"
             >
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
