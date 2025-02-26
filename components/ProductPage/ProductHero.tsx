@@ -7,9 +7,9 @@ import FilteredProducts from "./FilteredProducts";
 const ProductHero = () => {
   return (
     <>
-      <div className="md:px-24 md:py-16 flex flex-col items-center justify-between  bg-gray-50 p-8 tablet:flex-row">
+      <div className="flex flex-col items-center justify-between bg-gray-50 p-8  tablet:flex-row tablet:px-24 tablet:py-16">
         {/* Text Section */}
-        <div className="md:text-left w-auto text-left tablet:w-1/2">
+        <div className="w-auto text-left tablet:w-1/2 tablet:text-left">
           <h1 className="mb-4 font-serif text-5xl font-bold leading-tight text-gray-800">
             Huggies Diapers
           </h1>
@@ -27,7 +27,7 @@ const ProductHero = () => {
 
         {/* Image Section */}
         {/* Image Section */}
-        <div className="md:mt-0 mt-8 w-full tablet:w-1/2">
+        <div className="mt-8 w-full tablet:mt-0 tablet:w-1/2">
           <Image
             src="/assets/images/product-bg.jpg"
             alt="Huggies Diapers"

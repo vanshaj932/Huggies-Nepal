@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+// import ScrollTrigger from "gsap-trial/ScrollTrigger";
 
 interface Feature {
   img: string;
@@ -16,6 +18,7 @@ interface FeatureProps {
 
 const ProductFeature: React.FC<FeatureProps> = ({ features }) => {
   // const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     features.forEach((_, index) => {
@@ -25,11 +28,13 @@ const ProductFeature: React.FC<FeatureProps> = ({ features }) => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: `#feature-${index}`,
-            start: "top 80%",
+            start: "top 80%", // Triggers when the top of the element reaches 80% of the viewport
+            end: "top 30%", // Ends when the top reaches 30% of the viewport
+            scrub: 1,
             toggleActions: "play none none none",
           },
         }
@@ -38,7 +43,7 @@ const ProductFeature: React.FC<FeatureProps> = ({ features }) => {
   }, [features]);
 
   return (
-    <section className="bg-[#fff4f4] py-16">
+    <section className="mt-10 bg-[#fff4f4] py-16">
       <div className="mx-10 flex max-w-full flex-col px-4 text-center laptop:flex-row laptop:text-left">
         {/* Header */}
         <div className="mr-10 w-auto">
@@ -53,7 +58,7 @@ const ProductFeature: React.FC<FeatureProps> = ({ features }) => {
             <div
               key={index}
               id={`feature-${index}`}
-              className={`relative opacity-0 ${index % 2 === 1 ? "laptop:mt-[400px]" : "laptop:mt-[-200px]"} ${index === 0 ? "laptop:mt-1" : ""}`}
+              className={`relative opacity-0 ${index % 2 === 1 ? "laptop:mt-[400px]" : "laptop:mt-[-200px]"} ${index === 0 ? "laptop:mt-[50px]" : ""}`}
             >
               {/* Feature Card */}
               <div className="overflow-hidden rounded-2xl bg-[#ffecec]">

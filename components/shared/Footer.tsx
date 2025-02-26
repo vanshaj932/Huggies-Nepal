@@ -145,7 +145,7 @@ const Footer = () => {
             <ul className="space-y-6">
               <li>
                 <Link
-                  href="#"
+                  href="/product"
                   className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   Products
@@ -153,7 +153,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/about"
                   className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   About Huggies
@@ -170,7 +170,7 @@ const Footer = () => {
             <ul className="space-y-6">
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="text-xl text-white/90 transition-colors hover:text-white"
                 >
                   Contact us

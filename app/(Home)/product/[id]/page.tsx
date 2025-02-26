@@ -3,6 +3,7 @@ import Footer from "@/components/shared/Footer";
 import Header from "@/components/navbar/Header";
 // import { Params } from "next/dist/server/request/params";
 import { products } from "@/lib/product";
+import NotFound from "@/components/ProductPage/NotFound";
 // import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
 type PageParams = {
@@ -23,7 +24,13 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const product = products.find((p) => p.id === productID);
 
   if (!product) {
-    return <div>Product not found</div>;
+    return (
+      <main>
+        <Header />
+        <NotFound />
+        <Footer />
+      </main>
+    );
   }
   return (
     <main>

@@ -7,8 +7,23 @@
 
 export const newProducts = [
   {
+    name: "Huggies Skin Perfect Diapers",
+    description:
+      "Soft surface combined with Dual Zone technology helps soothe and nourish your baby`s skin. Clinically proven to help prevent skin irritation, safe for sensitive skin.",
     id: 1,
-    imageUrl: "/assets/images/newProduct1.webp",
+    imageUrl: "/assets/images/newProduct12.jpg",
+    features: [
+      "Dual Zone dual absorbent technology",
+      "Reduces loose stools on baby's skin by up to 93%",
+      "Limit skin irritation",
+    ],
+  },
+  {
+    name: "Huggies Nature Made Diapers",
+    description:
+      "Soft surface combined with Dual Zone technology helps soothe and nourish your baby`s skin. Clinically proven to help prevent skin irritation, safe for sensitive skin.",
+    id: 2,
+    imageUrl: "/assets/images/newProduct2.jpg",
     features: [
       "Dual Zone dual absorbent technology",
       "Reduces loose stools on baby's skin by up to 93%",
@@ -40,6 +55,26 @@ export const product = [
   },
   {
     id: 3,
+    name: "Huggies Comfy Pants",
+    description:
+      "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+    image: "/assets/images/product3.jpg",
+    size: "S M",
+    type: "Pants",
+    features: ["12-hour Absorbency", "Bubble Bed Liner"],
+  },
+  {
+    id: 4,
+    name: "Huggies",
+    description:
+      "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+    image: "/assets/images/product3.jpg",
+    size: "S M",
+    type: "Pants",
+    features: ["12-hour Absorbency", "Bubble Bed Liner"],
+  },
+  {
+    id: 5,
     name: "Huggies Comfy Pants",
     description:
       "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
@@ -181,6 +216,84 @@ export const products: Product[] = [
     description:
       "Introducing New & Improved Huggies Comfy Pants with 1000 absorption funnels which allows upto 50% faster absorption~ and improved air flow for quick dry feel. Designed for up to 12 Hours of Overnight Absorption",
     image: "/assets/images/product3.jpg",
+    type: "Pants",
+    features: [
+      {
+        img: "/assets/images/P3F1.jpg",
+        title: "Up to 10 Hrs Overnight Absorption",
+        content:
+          "Comfortable night's sleep for you and your baby with up to 10 Hrs overnight absorption",
+      },
+      {
+        img: "/assets/images/P3F2.jpg",
+        title: "360 degree soft fit waistband",
+        content:
+          "No more red marks on your baby's waist with our 360 degree Soft fit Waistband",
+      },
+      {
+        img: "/assets/images/P3F3.jpg",
+        title: "Bubble Bed Softness",
+        content:
+          "Nepal's 1st pants will Bubble Bed to wrap your baby in softness",
+      },
+    ],
+    size: [
+      { size: "XS/NB", weight: "0-5 kgs" },
+      { size: "S", weight: "4-8 kgs" },
+      { size: "M", weight: "7-12 kgs" },
+      { size: "L", weight: "9-14 kgs" },
+      { size: "XL", weight: "12-17 kgs" },
+      { size: "XXL", weight: "15-25 kgs" },
+      { size: "XXXL", weight: "17 kgs+", highlight: true },
+    ],
+  },
+  {
+    id: 4,
+    name: "Huggies Skin Perfect NewBorn Diapers",
+    tagline:
+      "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+    description:
+      "Introducing New & Improved Huggies Comfy Pants with 1000 absorption funnels which allows upto 50% faster absorption~ and improved air flow for quick dry feel. Designed for up to 12 Hours of Overnight Absorption",
+    image: "/assets/images/newProduct1.jpg",
+    type: "Pants",
+    features: [
+      {
+        img: "/assets/images/P3F1.jpg",
+        title: "Up to 10 Hrs Overnight Absorption",
+        content:
+          "Comfortable night's sleep for you and your baby with up to 10 Hrs overnight absorption",
+      },
+      {
+        img: "/assets/images/P3F2.jpg",
+        title: "360 degree soft fit waistband",
+        content:
+          "No more red marks on your baby's waist with our 360 degree Soft fit Waistband",
+      },
+      {
+        img: "/assets/images/P3F3.jpg",
+        title: "Bubble Bed Softness",
+        content:
+          "Nepal's 1st pants will Bubble Bed to wrap your baby in softness",
+      },
+    ],
+    size: [
+      { size: "XS/NB", weight: "0-5 kgs" },
+      { size: "S", weight: "4-8 kgs" },
+      { size: "M", weight: "7-12 kgs" },
+      { size: "L", weight: "9-14 kgs" },
+      { size: "XL", weight: "12-17 kgs" },
+      { size: "XXL", weight: "15-25 kgs" },
+      { size: "XXXL", weight: "17 kgs+", highlight: true },
+    ],
+  },
+  {
+    id: 5,
+    name: "Huggies Nature Made Diapers",
+    tagline:
+      "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+    description:
+      "Introducing New & Improved Huggies Comfy Pants with 1000 absorption funnels which allows upto 50% faster absorption~ and improved air flow for quick dry feel. Designed for up to 12 Hours of Overnight Absorption",
+    image: "/assets/images/newProduct2.jpg",
     type: "Pants",
     features: [
       {

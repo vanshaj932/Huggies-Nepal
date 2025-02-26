@@ -23,9 +23,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <Image
         src={imageUrl}
         alt={productName}
-        width={50}
-        height={100}
+        width={300}
+        height={400}
         className="mb-4 h-40 w-full object-contain"
+        placeholder="empty"
+        quality={100}
+        priority
       />
 
       {/* Product Details */}

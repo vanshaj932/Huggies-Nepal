@@ -9,7 +9,7 @@ const FilteredProducts = () => {
       id: 1,
       name: "Huggies Natural Soft Premium Pants",
       description:
-        "Our softest diapers made with India's 1st Cloud Touch Belt and goodness of natural cotton",
+        "Our softest diapers made with Nepal's 1st Cloud Touch Belt and goodness of natural cotton",
       image: "/assets/images/product1.jpg",
       size: ["S"],
       type: ["Taped"],
@@ -19,7 +19,7 @@ const FilteredProducts = () => {
       id: 2,
       name: "Huggies Wonder Pants",
       description:
-        "India's fastest absorbing diaper pants with Dry Xpert technology that absorbs 4x faster for up to 12 hours",
+        "Nepal's fastest absorbing diaper pants with Dry Xpert technology that absorbs 4x faster for up to 12 hours",
       image: "/assets/images/product2.jpg",
       size: ["M", "L"],
       type: ["Pants"],
@@ -31,6 +31,26 @@ const FilteredProducts = () => {
       description:
         "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
       image: "/assets/images/product3.jpg",
+      size: ["S", "M"],
+      type: ["Pants"],
+      features: ["12-hour Absorbency", "Bubble Bed Liner"],
+    },
+    {
+      id: 4,
+      name: "Huggies Skin Perfect NewBorn Diapers",
+      description:
+        "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+      image: "/assets/images/newProduct1.jpg",
+      size: ["S", "M"],
+      type: ["Pants"],
+      features: ["12-hour Absorbency", "Bubble Bed Liner"],
+    },
+    {
+      id: 5,
+      name: "Huggies Nature Made Diapers",
+      description:
+        "Diapers with 1000 absorption funnels which absorbs for up to 12 hours for an uninterrupted sleep.",
+      image: "/assets/images/newProduct2.jpg",
       size: ["S", "M"],
       type: ["Pants"],
       features: ["12-hour Absorbency", "Bubble Bed Liner"],
@@ -203,9 +223,9 @@ const FilteredProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={200}
-                  height={200}
-                  className="mb-4 h-auto w-full rounded-xl"
+                  width={400}
+                  height={400}
+                  className="mb-4 rounded-xl"
                 />
 
                 {/* Product Name */}
