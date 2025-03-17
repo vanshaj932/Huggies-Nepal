@@ -25,7 +25,7 @@ const MobileNav = () => {
       {/* Buy Now Button */}
       <div className="min-h-[5vh] w-full bg-blue-100"></div>
       <div className="flex h-auto min-h-[5vh] w-full flex-row items-center justify-center bg-slate-100">
-        <div className="flex items-center justify-center pr-[50%] ">
+        <div className="flex items-center justify-center pr-[40%] ">
           <Link href="/">
             <Image
               src="/assets/images/main-logo.webp"
@@ -37,18 +37,18 @@ const MobileNav = () => {
           </Link>
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-3">
           <Link
             href="mailto:email@test.com"
             className="block text-sm text-gray-600 hover:text-blue-500"
           >
-            <EmailIcon className="text-blue-500" />
+            <EmailIcon className="size-10 text-blue-500" />
           </Link>
           <Link
             href="tel:02-026-6597"
             className="block text-sm text-gray-600 hover:text-blue-500"
           >
-            <CallIcon className="text-blue-500" />
+            <CallIcon className="size-10 text-blue-500" />
           </Link>
           <Link
             href="https://www.daraz.com.np/baby-diapers/huggies/"
@@ -68,7 +68,7 @@ const MobileNav = () => {
         <Sheet>
           <SheetTrigger asChild>
             <button className="p-2">
-              <Menu className="size-6 text-blue-500" />
+              <Menu className="size-8 text-blue-500" />
             </button>
           </SheetTrigger>
 
@@ -76,8 +76,10 @@ const MobileNav = () => {
             side="top"
             className="size-full bg-white p-0 text-center"
           >
-            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <div className="mb-8 text-center">
+            <SheetTitle className="sr-only text-center">
+              Navigation Menu
+            </SheetTitle>
+            <div className="mb-8 flex items-center justify-center text-center">
               <Link href="/" className="flex items-center gap-2 text-center">
                 <span className="text-center font-serif text-2xl font-bold  ">
                   Huggies

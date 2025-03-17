@@ -29,7 +29,7 @@ const NewProducts = () => {
           className="mb-5 flex flex-col rounded-3xl bg-white text-left shadow-lg transition hover:shadow-xl laptop:flex-row"
         >
           {/* Left Section: Product Image */}
-          <div className="relative h-auto w-full overflow-hidden rounded-t-3xl laptop:h-auto laptop:w-1/2 laptop:rounded-l-3xl laptop:rounded-tr-none">
+          <div className="relative h-auto w-full overflow-hidden rounded-t-3xl laptop:h-[500px] laptop:w-1/2 laptop:rounded-l-3xl laptop:rounded-tr-none">
             <Image
               src={product.imageUrl}
               alt={`Image of ${product.name}`}
@@ -54,12 +54,14 @@ const NewProducts = () => {
                 <FeatureItem key={index} feature={feature} index={index} />
               ))}
             </ul>
-            <button
-              aria-label="Buy Now - Huggies Skin Perfect Diapers"
-              className="mt-10 rounded-lg bg-orange-400 px-6 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-500 hover:shadow-lg"
-            >
-              Buy Now
-            </button>
+            <div className="mt-10 flex justify-center">
+              <button
+                aria-label="Buy Now - Huggies Skin Perfect Diapers"
+                className="rounded-lg bg-orange-400 px-6 py-3 font-bold text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-500 hover:shadow-lg"
+              >
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
       ))}

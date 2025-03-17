@@ -1,10 +1,3 @@
-// interface Product {
-//   id: number;
-//   imageUrl: string;
-//   name: string;
-//   size: string;
-// }
-
 export const newProducts = [
   {
     name: "Huggies Skin Perfect Diapers",
@@ -23,7 +16,7 @@ export const newProducts = [
     description:
       "Soft surface combined with Dual Zone technology helps soothe and nourish your baby`s skin. Clinically proven to help prevent skin irritation, safe for sensitive skin.",
     id: 2,
-    imageUrl: "/assets/images/newProduct2.jpg",
+    imageUrl: "/assets/images/newProduct22.webp",
     features: [
       "Dual Zone dual absorbent technology",
       "Reduces loose stools on baby's skin by up to 93%",
