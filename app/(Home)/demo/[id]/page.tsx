@@ -4,6 +4,7 @@ import NotFound from "@/components/ProductPage/NotFound";
 import Footer from "@/components/shared/Footer";
 import { newProducts } from "@/lib/newProduct";
 import React from "react";
+import Banner from "@/components/newProduct/Banner";
 
 type PageParams = {
   id: string;
@@ -25,6 +26,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     return (
       <main>
         <Header />
+        <Banner />
         <NotFound />
         <Footer />
       </main>
@@ -34,6 +36,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <section>
       <Header />
+      <Banner />
       <NewProduct newProduct={product} />
       <Footer />
     </section>

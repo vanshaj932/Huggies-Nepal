@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import FeatureCard from "@/components/shared/newFeatureCard";
 import Link from "next/link";
 
@@ -35,6 +36,9 @@ interface ProductProps {
 }
 
 const NewProduct: React.FC<ProductProps> = ({ newProduct }) => {
+  // Add state to track expanded content
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section>
       <div className="h-auto">
@@ -98,44 +102,60 @@ const NewProduct: React.FC<ProductProps> = ({ newProduct }) => {
           </Link>
         </div>
 
-        <div className="mt-6">
-          <p className="text-left font-serif text-xl font-light uppercase text-gray-600">
-            {newProduct.description}
-          </p>
+        {/* Read More button */}
+
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="rounded-full border-2 border-red-500 px-6 py-2 font-bold text-red-500 transition-all hover:bg-red-500 hover:text-white"
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+          </button>
         </div>
 
-        <div className="my-10">
-          <h2 className="border-b border-b-[#e1e1e1] text-center font-serif text-2xl font-bold text-red-500">
-            {newProduct.heading}
-          </h2>
-        </div>
-
-        <div className="mt-6">
-          {newProduct.details.map((detail, index) => (
-            <div key={index} className="mt-10">
-              <h3 className="font-mono text-2xl font-bold text-gray-700">
-                {detail.heading}
-              </h3>
-
-              <p className="font-serif text-lg font-medium text-gray-600">
-                {detail.description}
+        {/* Content that will be hidden/shown */}
+        {isExpanded && (
+          <>
+            <div className="mt-6">
+              <p className="text-left font-serif text-xl font-light uppercase text-gray-600">
+                {newProduct.description}
               </p>
-
-              {detail.points && (
-                <ul className="mt-4 list-inside list-disc">
-                  {detail.points.map((point, index) => (
-                    <li
-                      key={index}
-                      className="font-serif text-lg font-light text-gray-600"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              )}
             </div>
-          ))}
-        </div>
+
+            <div className="my-10">
+              <h2 className="border-b border-b-[#e1e1e1] text-center font-serif text-2xl font-bold text-red-500">
+                {newProduct.heading}
+              </h2>
+            </div>
+
+            <div className="mt-6">
+              {newProduct.details.map((detail, index) => (
+                <div key={index} className="mt-10">
+                  <h3 className="font-mono text-2xl font-bold text-gray-700">
+                    {detail.heading}
+                  </h3>
+
+                  <p className="font-serif text-lg font-medium text-gray-600">
+                    {detail.description}
+                  </p>
+
+                  {detail.points && (
+                    <ul className="mt-4 list-inside list-disc">
+                      {detail.points.map((point, index) => (
+                        <li
+                          key={index}
+                          className="font-serif text-lg font-light text-gray-600"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <FeatureCard features={newProduct.features} />
